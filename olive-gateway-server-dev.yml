@@ -6,12 +6,12 @@ spring:
     name: olive-gateway-server    
   cloud:
     gateway:
-#       globalcors:
-#         corsConfigurations:
-#           '[/**]':
-#             allowedMethods: "*"
-#             allowedHeaders: "authorization"
-#             allowedOrigins: "*"
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedMethods: "*"
+            allowedHeaders: "authorization"
+            allowedOrigins: "*"
 
 #      discovery:
 #        locator:
