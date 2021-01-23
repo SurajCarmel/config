@@ -10,7 +10,7 @@ spring:
         corsConfigurations:
           '[/**]':
             allowedMethods: "*"
-            allowedHeaders: "*"
+            allowedHeaders: "Authorization"
             allowedOrigins: "*"
 
 #      discovery:
