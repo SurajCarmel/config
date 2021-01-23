@@ -9,9 +9,6 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
-            globalcors:
-        corsConfigurations:
-          '[/**]':
             allowedMethods: "*"
             allowedHeaders: "authorization"
             allowedOrigins: "*"
