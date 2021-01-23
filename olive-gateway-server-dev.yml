@@ -11,9 +11,9 @@ spring:
           '[/**]':
             allowedOrigins: "*"
             allowedMethods:
-            - GET
-            - POST
-            - OPTIONS
+              - GET
+              - POST
+              - OPTIONS
 
 #      discovery:
 #        locator:
