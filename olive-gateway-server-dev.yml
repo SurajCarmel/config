@@ -9,11 +9,12 @@ spring:
       globalcors:
         corsConfigurations:
           '[/**]':
+            globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedMethods: "*"
+            allowedHeaders: "authorization"
             allowedOrigins: "*"
-            allowedMethods:
-              - GET
-              - POST
-              - OPTIONS
 
 #      discovery:
 #        locator:
