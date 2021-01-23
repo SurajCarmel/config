@@ -35,7 +35,7 @@ spring:
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/api/v1.0/refreshToken, /oauth/token
-            - SimpleCORSFilter
+#             - SimpleCORSFilter
             
             
         - id: foundation-get-org
