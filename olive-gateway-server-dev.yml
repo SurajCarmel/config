@@ -6,6 +6,14 @@ spring:
     name: olive-gateway-server    
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "http://localhost:7075"
+            allowedMethods:
+            - GET
+            - POST
+
 #      discovery:
 #        locator:
 #          enabled: true
