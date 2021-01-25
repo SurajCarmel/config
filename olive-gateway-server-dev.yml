@@ -17,20 +17,7 @@ spring:
 #        locator:
 #          enabled: true
 #          lower-case-service-id: true
-      routes:
-        - id: foundation-web
-          uri: lb://olive-foundation-web
-          predicates:
-            - Path=/            
-        - id: refresh-token
-          uri: lb://olive-auth-server
-          predicates:
-            - Path=/api/v1.0/refreshToken
-            - Method=POST
-          filters:
-            - RemoveRequestHeader=Cookie
-            - RewritePath=/api/v1.0/refreshToken, /oauth/token
-            
+      routes:            
         - id: do-login
           uri: lb://olive-auth-server
           predicates:
