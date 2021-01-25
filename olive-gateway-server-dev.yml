@@ -21,12 +21,7 @@ spring:
         - id: foundation-web
           uri: lb://olive-foundation-web
           predicates:
-            - Path=/api/v1.0/doLogin
-            - Method=POST
-          filters:
-            - RemoveRequestHeader=Cookie
-            - RewritePath=/api/v1.0/doLogin, /olive/login
-            
+            - Path=/            
         - id: refresh-token
           uri: lb://olive-auth-server
           predicates:
