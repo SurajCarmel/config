@@ -6,12 +6,8 @@ spring:
     name: olive-gateway-server    
   cloud:
     gateway:
-      globalcors:
-        corsConfigurations:
-          '[/**]':
-            allowedMethods: "*"
-            allowedHeaders: "Authorization"
-            allowedOrigins: "*"
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Credentials Access-Control-Allow-Origin, RETAIN_UNIQUE
 
 #      discovery:
 #        locator:
