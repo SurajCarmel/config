@@ -18,7 +18,7 @@ spring:
           uri: lb://olive-core-user
           predicates:
             - Path=/api/v1.0/doLogin
-            - Method=GET
+            - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
             - RewritePath=/api/v1.0/doLogin, /olive/core-user-login
