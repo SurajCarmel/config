@@ -24,13 +24,13 @@ spring:
             - RewritePath=/api/v1.0/doLogin, /olive/core-user-login
             
         - id: refresh-token
-          uri: lb://olive-auth-server
+          uri: lb://olive-core-user
           predicates:
             - Path=/api/v1.0/refreshToken
             - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/api/v1.0/refreshToken, /oauth/token    
+            - RewritePath=/api/v1.0/refreshToken, /olive/reFresh-token    
             
         - id: foundation-get-org
 #          uri: 'http://localhost:7072'
