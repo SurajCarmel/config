@@ -45,7 +45,7 @@ spring:
         - id: edit-profile
           uri: lb://olive-core-user
           predicates:
-            - Path=/api/v1.0/editeProfile
+            - Path=/api/v1.0/editProfile
             - Method=POST
             - Header=Authorization, Bearer (.*)
           filters:
