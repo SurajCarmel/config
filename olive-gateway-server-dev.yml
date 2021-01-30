@@ -30,8 +30,66 @@ spring:
             - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/api/v1.0/refreshToken, /olive/reFresh-token    
+            - RewritePath=/api/v1.0/refreshToken, /olive/reFresh-token  
             
+        - id: change-password
+          uri: lb://olive-core-user
+          predicates:
+            - Path=/api/v1.0/changePassword
+            - Method=POST
+            - Header=Authorization, Bearer (.*)
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/api/v1.0/refreshToken, /olive/change-password
+         
+        - id: edit-profile
+          uri: lb://olive-core-user
+          predicates:
+            - Path=/api/v1.0/editeProfile
+            - Method=POST
+            - Header=Authorization, Bearer (.*)
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/api/v1.0/refreshToken, /olive/edit-profile
+        
+        - id: reset-password
+          uri: lb://olive-core-user
+          predicates:
+            - Path=/api/v1.0/resetPassword
+            - Method=POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/api/v1.0/refreshToken, /olive/reset-password
+        
+        - id: forgot-password
+          uri: lb://olive-core-user
+          predicates:
+            - Path=/api/v1.0/forgotPassword
+            - Method=POST
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/api/v1.0/refreshToken, /olive/forgot-password
+        
+        - id: change-myPic
+          uri: lb://olive-core-user
+          predicates:
+            - Path=/api/v1.0/updateMyPic
+            - Method=POST
+            - Header=Authorization, Bearer (.*)
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/api/v1.0/refreshToken, /olive/change-myPic
+        
+        - id: profile
+          uri: lb://olive-core-user
+          predicates:
+            - Path=/api/v1.0/myProfile
+            - Method=POST
+            - Header=Authorization, Bearer (.*)
+          filters:
+            - RemoveRequestHeader=Cookie
+            - RewritePath=/api/v1.0/refreshToken, /olive/get-myProfile
+        
         - id: foundation-get-org
 #          uri: 'http://localhost:7072'
           uri: lb://olive-foundation-server
