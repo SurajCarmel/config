@@ -40,7 +40,7 @@ spring:
             - Header=Authorization, Bearer (.*)
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/api/v1.0/refreshToken, /olive/change-password
+            - RewritePath=/api/v1.0/changePassword, /olive/change-password
          
         - id: edit-profile
           uri: lb://olive-core-user
@@ -50,7 +50,7 @@ spring:
             - Header=Authorization, Bearer (.*)
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/api/v1.0/refreshToken, /olive/edit-profile
+            - RewritePath=/api/v1.0/editProfile, /olive/edit-profile
         
         - id: reset-password
           uri: lb://olive-core-user
@@ -59,7 +59,7 @@ spring:
             - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/api/v1.0/refreshToken, /olive/reset-password
+            - RewritePath=/api/v1.0/resetPassword, /olive/reset-password
         
         - id: forgot-password
           uri: lb://olive-core-user
@@ -68,7 +68,7 @@ spring:
             - Method=POST
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/api/v1.0/refreshToken, /olive/forgot-password
+            - RewritePath=/api/v1.0/forgotPassword, /olive/forgot-password
         
         - id: change-myPic
           uri: lb://olive-core-user
@@ -78,7 +78,7 @@ spring:
             - Header=Authorization, Bearer (.*)
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/api/v1.0/refreshToken, /olive/change-myPic
+            - RewritePath=/api/v1.0/updateMyPic, /olive/change-myPic
         
         - id: profile
           uri: lb://olive-core-user
@@ -88,7 +88,7 @@ spring:
             - Header=Authorization, Bearer (.*)
           filters:
             - RemoveRequestHeader=Cookie
-            - RewritePath=/api/v1.0/refreshToken, /olive/get-myProfile
+            - RewritePath=/api/v1.0/myProfile, /olive/get-myProfile
         
         - id: foundation-get-org
 #          uri: 'http://localhost:7072'
